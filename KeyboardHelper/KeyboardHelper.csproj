@@ -36,6 +36,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -53,6 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppleKeyboardHID2.cs" />
+    <Compile Include="TrayIcon.cs" />
+    <Compile Include="Views\Configuration.xaml.cs">
+      <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -61,12 +69,32 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BrightnessControl\Brightness.cs" />
+    <Compile Include="BrightnessControl\BrightnessControl.cs" />
+    <Compile Include="BrightnessControl\Display.cs" />
+    <Compile Include="BrightnessControl\Monitor.cs" />
+    <Compile Include="BrightnessControl\MonitorCapabilities.cs" />
+    <Compile Include="BrightnessControl\NativeConstants.cs" />
+    <Compile Include="BrightnessControl\NativeMethods.cs" />
+    <Compile Include="BrightnessControl\NativeStructures.cs" />
+    <Compile Include="Clipboard\ClipboardMonitor.cs" />
+    <Compile Include="FocusCheck\Focus.cs" />
+    <Compile Include="HIDImports.cs" />
+    <Compile Include="IoControl.cs" />
+    <Compile Include="KeyboardControl.cs" />
+    <Compile Include="KeyboardHandler.cs" />
+    <Compile Include="KeyboardListener.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Configuration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotificationCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gnome-Preferences-Desktop-Keyboard-Shortcuts.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
