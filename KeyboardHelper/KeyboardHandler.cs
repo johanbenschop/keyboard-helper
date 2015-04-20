@@ -38,7 +38,8 @@ namespace KeyboardHelper
 
         public static bool HandleKeyDown(KeyboardListener.KeyHookEventArgs e)
         {
-            if (Focus.GetActiveWindowTitle().Contains("EVE"))
+            var title = Focus.GetActiveWindowTitle();
+            if (title != null && title.Contains("EVE"))
             {
                 return false;
             }
